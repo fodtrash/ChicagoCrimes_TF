@@ -1,0 +1,10 @@
+{
+  "total_lines": 100000,
+  "valid_records": 100000,
+  "invalid_records": 0,
+  "workers_used": 8,
+  "chunk_size": 5000,
+  "elapsed_ms": 200,
+  "records_per_sec": 498995.58426332596,
+  "error_summary": {}
+}

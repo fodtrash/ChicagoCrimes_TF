@@ -1,0 +1,182 @@
+# ── Red interna del sistema ────────────────────────────────────────────────────
+networks:
+  crimes_net:
+    driver: bridge
+
+# ── Volúmenes persistentes ─────────────────────────────────────────────────────
+volumes:
+  mongo_data:
+  redis_data:
+
+services:
+
+  # ── Parte A: Cargador de datos concurrente ───────────────────────────────────
+  loader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crimes_loader
+    environment:
+      WORKERS: "8"            # goroutines trabajadoras
+      CHUNK_SIZE: "5000"      # líneas por bloque
+      SAMPLE_SIZE: "100000"   # tamaño de la muestra aleatoria para entrenar
+      VERBOSE: "true"
+      DATA_FILE: ${DATA_FILE:-/app/data/crimes.csv}
+      OUTPUT_DIR: "/app/output"
+    volumes:
+      - ./data:/app/data               # Dataset CSV y salida generada
+      - ./data/output:/app/output      # Resultados limpios y sample para ML
+    networks:
+      - crimes_net
+    # El loader se ejecuta una vez y termina (no es un servicio persistente)
+    restart: "no"
+
+  # ── Entrenamiento local (Entregable 1, se conserva como referencia) ─────────
+  trainer:
+    build:
+      context: ./ml
+      dockerfile: Dockerfile
+    image: crimes-ml:latest
+    profiles: ["local-train"]          # solo corre con: docker compose --profile local-train up trainer
+    depends_on:
+      loader:
+        condition: service_completed_successfully
+    command:
+      - trainer
+      - -data
+      - /output/clean_records_sample.json
+      - -out
+      - /output/train_results.json
+    volumes:
+      - ./data:/data:ro
+      - ./data/output:/output
+    networks:
+      - crimes_net
+    restart: "no"
+
+  # ── Parte B distribuida: Clúster de nodos ML (workers TCP) ──────────────────
+  node1:
+    image: crimes-ml:latest
+    build:
+      context: ./ml
+      dockerfile: Dockerfile
+    container_name: crimes_node1
+    command: ["node", "-port", "9000"]
+    networks:
+      - crimes_net
+    restart: unless-stopped
+
+  node2:
+    image: crimes-ml:latest
+    build:
+      context: ./ml
+      dockerfile: Dockerfile
+    container_name: crimes_node2
+    command: ["node", "-port", "9000"]
+    depends_on: [node1]
+    networks:
+      - crimes_net
+    restart: unless-stopped
+
+  node3:
+    image: crimes-ml:latest
+    build:
+      context: ./ml
+      dockerfile: Dockerfile
+    container_name: crimes_node3
+    command: ["node", "-port", "9000"]
+    depends_on: [node1]
+    networks:
+      - crimes_net
+    restart: unless-stopped
+
+  # ── Parte C: API REST (coordinador del clúster + WebSocket) ─────────────────
+  api:
+    image: crimes-ml:latest
+    build:
+      context: ./ml
+      dockerfile: Dockerfile
+    container_name: crimes_api
+    command: ["api"]
+    environment:
+      PORT: "8080"
+      NODES: "node1:9000,node2:9000,node3:9000"
+      DATA_FILE: "/output/clean_records_sample.json"
+      MONGO_URI: "mongodb://admin:secret@mongo:27017"
+      MONGO_DB: "chicago_crimes"
+      REDIS_ADDR: "redis:6379"
+      JWT_SECRET: "cc65-super-secreto"
+      ADMIN_USER: "admin"
+      ADMIN_PASS: "admin123"
+      USER_USER: "cliente"
+      USER_PASS: "cliente123"
+      AUTO_TRAIN: "true"      # entrena el modelo al arrancar el stack
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data/output:/output:ro
+    depends_on:
+      loader:
+        condition: service_completed_successfully
+      node1:
+        condition: service_started
+      node2:
+        condition: service_started
+      node3:
+        condition: service_started
+      mongo:
+        condition: service_started
+      redis:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks:
+      - crimes_net
+    restart: unless-stopped
+
+  # ── MongoDB: almacenamiento persistente ─────────────────────────────────────
+  mongo:
+    image: mongo:7.0
+    container_name: crimes_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+      MONGO_INITDB_DATABASE: chicago_crimes
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - crimes_net
+    restart: unless-stopped
+
+  # ── Redis: caché de predicciones precalculadas ───────────────────────────────
+  redis:
+    image: redis:7.2-alpine
+    container_name: crimes_redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - crimes_net
+    restart: unless-stopped
+
+  # ── Parte D: Frontend SPA (React + Vite, servido por nginx) ──────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: crimes_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - crimes_net
+    restart: unless-stopped
