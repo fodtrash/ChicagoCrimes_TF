@@ -1,0 +1,194 @@
+:root {
+  --bg: #0f1422;
+  --panel: #1a2236;
+  --panel-2: #212b45;
+  --border: #2e3a5c;
+  --text: #e8ecf6;
+  --muted: #93a0be;
+  --accent: #4f8cff;
+  --ok: #37c978;
+  --warn: #f5b944;
+  --bad: #f2555a;
+  --radius: 12px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── Barra superior ─────────────────────────────────────── */
+.topbar {
+  display: flex; align-items: center; gap: 24px;
+  padding: 14px 28px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .brand { font-weight: 700; font-size: 17px; }
+.topbar .brand span { color: var(--accent); }
+.topbar nav { display: flex; gap: 6px; flex: 1; }
+.topbar nav button {
+  background: transparent; border: none; color: var(--muted);
+  padding: 8px 16px; font-size: 14px; cursor: pointer; border-radius: 8px;
+}
+.topbar nav button.active { background: var(--panel-2); color: var(--text); }
+.topbar .user { color: var(--muted); font-size: 13px; display: flex; gap: 12px; align-items: center; }
+.topbar .user button {
+  background: transparent; border: 1px solid var(--border); color: var(--muted);
+  padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 13px;
+}
+
+main { flex: 1; padding: 28px; max-width: 1200px; width: 100%; margin: 0 auto; }
+
+/* ── Tarjetas y grids ───────────────────────────────────── */
+.grid { display: grid; gap: 18px; }
+.grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) { .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.card h2 { font-size: 16px; margin-bottom: 16px; }
+.card h2 small { color: var(--muted); font-weight: 400; margin-left: 8px; font-size: 12px; }
+
+.stat { text-align: center; padding: 18px 10px; }
+.stat .value { font-size: 30px; font-weight: 700; }
+.stat .label { color: var(--muted); font-size: 12px; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat.ok .value { color: var(--ok); }
+.stat.warn .value { color: var(--warn); }
+.stat.bad .value { color: var(--bad); }
+.stat.accent .value { color: var(--accent); }
+
+/* ── Formularios ────────────────────────────────────────── */
+label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.4px; }
+input, select {
+  width: 100%; padding: 10px 12px; margin-bottom: 14px;
+  background: var(--panel-2); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text); font-size: 14px;
+}
+input:focus, select:focus { outline: 2px solid var(--accent); border-color: transparent; }
+
+.btn {
+  background: var(--accent); color: #fff; border: none;
+  padding: 11px 22px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  cursor: pointer; width: 100%;
+}
+.btn:disabled { opacity: 0.5; cursor: wait; }
+.btn.secondary { background: var(--panel-2); border: 1px solid var(--border); }
+
+.error { color: var(--bad); font-size: 13px; margin-top: 10px; }
+
+/* ── Login ──────────────────────────────────────────────── */
+.login-wrap { flex: 1; display: flex; align-items: center; justify-content: center; }
+.login-card { width: 380px; }
+.login-card h1 { font-size: 20px; margin-bottom: 4px; }
+.login-card p { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+
+/* ── Resultado de predicción ────────────────────────────── */
+.result { text-align: center; padding: 10px 0; }
+.result .prob { font-size: 52px; font-weight: 800; }
+.result .risk-badge {
+  display: inline-block; margin-top: 10px; padding: 6px 18px;
+  border-radius: 999px; font-size: 13px; font-weight: 700; text-transform: uppercase;
+}
+.risk-bajo  { background: rgba(55,201,120,.15); color: var(--ok); }
+.risk-medio { background: rgba(245,185,68,.15); color: var(--warn); }
+.risk-alto  { background: rgba(242,85,90,.15); color: var(--bad); }
+.result .meta { color: var(--muted); font-size: 12px; margin-top: 14px; display: flex; justify-content: center; gap: 16px; }
+.cache-badge { padding: 2px 8px; border-radius: 6px; font-weight: 700; }
+.cache-HIT  { background: rgba(55,201,120,.15); color: var(--ok); }
+.cache-MISS { background: rgba(79,140,255,.15); color: var(--accent); }
+
+/* ── Gráficos (SVG) ─────────────────────────────────────── */
+.chart-note { color: var(--muted); font-size: 12px; margin-top: 10px; }
+
+/* ── Tablas ─────────────────────────────────────────────── */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; color: var(--muted); font-weight: 500; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 8px; }
+.dot.up { background: var(--ok); }
+.dot.down { background: var(--bad); }
+
+.impact-text { color: var(--muted); font-size: 14px; line-height: 1.7; }
+.impact-text strong { color: var(--text); }
+
+.ws-status { font-size: 12px; color: var(--muted); }
+.ws-status .dot { vertical-align: middle; }
+
+/* ── Login con logo ─────────────────────────────────────── */
+.login-box { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.login-brand { font-size: 22px; font-weight: 700; }
+.login-brand span { color: var(--accent); }
+
+/* ── Mapa de distritos ──────────────────────────────────── */
+.predict-layout { display: grid; grid-template-columns: 340px 1fr; gap: 18px; align-items: start; }
+@media (max-width: 980px) { .predict-layout { grid-template-columns: 1fr; } }
+.predict-side { display: flex; flex-direction: column; gap: 18px; }
+.predict-main { display: flex; flex-direction: column; gap: 18px; }
+.district-map { width: 100%; max-height: 68vh; display: block; margin: 0 auto; }
+.map-wrap { max-width: 560px; margin: 0 auto; }
+.map-legend { display: flex; align-items: center; gap: 10px; margin-top: 10px; color: var(--muted); font-size: 11px; }
+.legend-bar {
+  flex: 1; height: 10px; border-radius: 5px;
+  background: linear-gradient(90deg, #d1d5db 0%, #f5b944 50%, #e11d48 100%);
+}
+.district-detail { text-align: center; }
+.detail-prob { font-size: 40px; font-weight: 800; color: var(--accent); }
+.detail-sub { color: var(--muted); font-size: 12px; }
+.detail-meta { color: var(--muted); font-size: 12px; margin-top: 12px; line-height: 1.6; }
+.detail-meta strong { color: var(--text); }
+.model-note p { color: var(--muted); font-size: 13px; line-height: 1.65; }
+cd /home/claude/proyecto/crimes-loader-main/frontend && npm run build 2>&1 | tail -3 && cd /home/claude/proyecto && rm -f /mnt/user-data/outputs/crimes-loader-corregido.zip && zip -qr /mnt/user-data/outputs/crimes-loader-corregido.zip crimes-loader-main -x "*/node_modules/*" -x "*/dist/*" -x "*.git*" && echo "zip listo"
+/* nota de mapa casi uniforme */
+.uniform-note {
+  margin-top: 12px; padding: 10px 14px; border-radius: 8px;
+  background: rgba(79,140,255,.08); border: 1px solid rgba(79,140,255,.25);
+  color: var(--muted); font-size: 12.5px; line-height: 1.6;
+}
+
+/* ── Filtro de crímenes estilo slicer (desplegable) ─────── */
+.crime-filter { margin-bottom: 14px; position: relative; }
+.crime-toggle {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 12px; background: var(--panel-2);
+  border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text); font-size: 14px; cursor: pointer;
+}
+.crime-toggle:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.crime-toggle .chev { color: var(--muted); font-size: 11px; }
+.crime-pop {
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 30;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; padding: 8px; box-shadow: 0 12px 30px rgba(0,0,0,.45);
+}
+.crime-pop .crime-count { padding: 6px 4px 2px; }
+.crime-list {
+  max-height: 168px; overflow-y: auto;
+  background: var(--panel-2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 4px 0;
+}
+.crime-item {
+  display: flex; align-items: center; gap: 9px;
+  padding: 5px 12px; font-size: 13px; color: var(--text);
+  text-transform: none; letter-spacing: 0; cursor: pointer; margin: 0;
+}
+.crime-item:hover { background: rgba(79,140,255,.08); }
+.crime-item input { width: auto; margin: 0; accent-color: var(--accent); cursor: pointer; }
+.crime-item.select-all {
+  background: var(--panel-2); border: 1px solid var(--border);
+  border-radius: 8px 8px 0 0; border-bottom: none; font-weight: 600;
+}
+.crime-item.select-all + .crime-list { border-radius: 0 0 8px 8px; }
+.crime-count { color: var(--muted); font-size: 11px; margin-top: 6px; }
