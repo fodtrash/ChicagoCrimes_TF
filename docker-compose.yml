@@ -21,7 +21,7 @@ services:
       CHUNK_SIZE: "5000"      # líneas por bloque
       SAMPLE_SIZE: "100000"   # tamaño de la muestra aleatoria para entrenar
       VERBOSE: "true"
-      DATA_FILE: "/app/data/crimes.csv"
+      DATA_FILE: ${DATA_FILE:-/app/data/crimes.csv}
       OUTPUT_DIR: "/app/output"
     volumes:
       - ./data:/app/data               # Dataset CSV y salida generada

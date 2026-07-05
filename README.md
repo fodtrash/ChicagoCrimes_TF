@@ -57,6 +57,14 @@ docker compose up --build
 Esto levanta: loader (una vez) → 3 nodos ML → MongoDB → Redis → API.
 Con `AUTO_TRAIN=true` la API entrena el modelo distribuido al arrancar.
 
+Para usar el CSV compartido en Google Drive, exporta el enlace como `DATA_FILE`
+antes de levantar Compose:
+
+```powershell
+$env:DATA_FILE = "https://drive.google.com/file/d/1fUh37cDvjSpB0GGpoSqxPQUyGvY3FDbv/view?usp=sharing"
+docker compose up --build
+```
+
 Entrenamiento local del Entregable 1 (opcional):
 
 ```bash
