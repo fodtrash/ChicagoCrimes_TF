@@ -1,4 +1,4 @@
-# crimes-loader — Sistema distribuido de predicción de riesgo (Chicago Crimes)
+Sistema distribuido de predicción de riesgo (Chicago Crimes)
 
 Solución del TF de CC65: carga concurrente, entrenamiento distribuido de un
 Random Forest en un clúster de nodos Go (TCP + gob), API REST/WebSocket
