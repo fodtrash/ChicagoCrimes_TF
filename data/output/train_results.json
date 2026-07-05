@@ -1,0 +1,27 @@
+{
+  "config": {
+    "max_depth": 10,
+    "min_samples_split": 20,
+    "num_trees": 100,
+    "num_workers": 12
+  },
+  "metrics": {
+    "accuracy": 0.6121939030484758,
+    "precision": 0.27569331158238175,
+    "recall": 0.3373253493013972,
+    "f1_score": 0.303411131059246,
+    "true_positives": 169,
+    "true_negatives": 1056,
+    "false_positives": 444,
+    "false_negatives": 332
+  },
+  "train_stats": {
+    "num_trees": 100,
+    "num_workers": 12,
+    "train_samples": 7999,
+    "elapsed_ms": 323,
+    "trees_per_sec": 309.42333799782824,
+    "class_weight_0": 0.6666944490748458,
+    "class_weight_1": 1.99975
+  }
+}

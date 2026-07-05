@@ -1,0 +1,1146 @@
+{
+  "generated_at": "2026-06-13T01:12:13.907467794Z",
+  "total_records": 100000,
+  "crimes_by_hour": {
+    "0": 4236,
+    "1": 4161,
+    "10": 4191,
+    "11": 4166,
+    "12": 4078,
+    "13": 4174,
+    "14": 4067,
+    "15": 4220,
+    "16": 4148,
+    "17": 4169,
+    "18": 4086,
+    "19": 4155,
+    "2": 4180,
+    "20": 4317,
+    "21": 4191,
+    "22": 4124,
+    "23": 4320,
+    "3": 4136,
+    "4": 3964,
+    "5": 4111,
+    "6": 4224,
+    "7": 4264,
+    "8": 4123,
+    "9": 4195
+  },
+  "crimes_by_district": {
+    "1": 4587,
+    "10": 4486,
+    "11": 4420,
+    "12": 4494,
+    "14": 4488,
+    "15": 4505,
+    "16": 4463,
+    "17": 4485,
+    "18": 4471,
+    "19": 4570,
+    "2": 4558,
+    "20": 4635,
+    "22": 4659,
+    "24": 4576,
+    "25": 4623,
+    "3": 4497,
+    "4": 4536,
+    "5": 4634,
+    "6": 4554,
+    "7": 4498,
+    "8": 4646,
+    "9": 4615
+  },
+  "crimes_by_day_of_week": {
+    "0": 14087,
+    "1": 14326,
+    "2": 14212,
+    "3": 14377,
+    "4": 14397,
+    "5": 14306,
+    "6": 14295
+  },
+  "crimes_by_type": {
+    "ARSON": 6462,
+    "ASSAULT": 6657,
+    "BATTERY": 6706,
+    "BURGLARY": 6627,
+    "CRIMINAL DAMAGE": 6635,
+    "CRIMINAL TRESPASS": 6679,
+    "DECEPTIVE PRACTICE": 6773,
+    "HOMICIDE": 6711,
+    "MOTOR VEHICLE THEFT": 6654,
+    "NARCOTICS": 6698,
+    "OTHER OFFENSE": 6735,
+    "PUBLIC PEACE VIOLATION": 6597,
+    "ROBBERY": 6780,
+    "THEFT": 6575,
+    "WEAPONS VIOLATION": 6711
+  },
+  "top_risk_hours": [
+    {
+      "hour": 23,
+      "crime_count": 4320,
+      "risk_score": 1,
+      "most_common_type": "THEFT"
+    },
+    {
+      "hour": 20,
+      "crime_count": 4317,
+      "risk_score": 1,
+      "most_common_type": "WEAPONS VIOLATION"
+    },
+    {
+      "hour": 7,
+      "crime_count": 4264,
+      "risk_score": 0.99,
+      "most_common_type": "BURGLARY"
+    },
+    {
+      "hour": 0,
+      "crime_count": 4236,
+      "risk_score": 0.98,
+      "most_common_type": "BURGLARY"
+    },
+    {
+      "hour": 6,
+      "crime_count": 4224,
+      "risk_score": 0.98,
+      "most_common_type": "WEAPONS VIOLATION"
+    }
+  ],
+  "top_risk_districts": [
+    {
+      "district": 22,
+      "crime_count": 4659,
+      "risk_score": 1,
+      "arrest_rate": 0.25
+    },
+    {
+      "district": 8,
+      "crime_count": 4646,
+      "risk_score": 1,
+      "arrest_rate": 0.25
+    },
+    {
+      "district": 20,
+      "crime_count": 4635,
+      "risk_score": 0.99,
+      "arrest_rate": 0.25
+    },
+    {
+      "district": 5,
+      "crime_count": 4634,
+      "risk_score": 0.99,
+      "arrest_rate": 0.25
+    },
+    {
+      "district": 25,
+      "crime_count": 4623,
+      "risk_score": 0.99,
+      "arrest_rate": 0.25
+    }
+  ],
+  "heatmap_data": [
+    {
+      "hour": 20,
+      "district": 5,
+      "count": 235
+    },
+    {
+      "hour": 22,
+      "district": 2,
+      "count": 233
+    },
+    {
+      "hour": 20,
+      "district": 15,
+      "count": 232
+    },
+    {
+      "hour": 12,
+      "district": 5,
+      "count": 229
+    },
+    {
+      "hour": 0,
+      "district": 22,
+      "count": 229
+    },
+    {
+      "hour": 3,
+      "district": 1,
+      "count": 227
+    },
+    {
+      "hour": 8,
+      "district": 1,
+      "count": 225
+    },
+    {
+      "hour": 23,
+      "district": 19,
+      "count": 223
+    },
+    {
+      "hour": 23,
+      "district": 3,
+      "count": 220
+    },
+    {
+      "hour": 20,
+      "district": 1,
+      "count": 220
+    },
+    {
+      "hour": 3,
+      "district": 8,
+      "count": 218
+    },
+    {
+      "hour": 10,
+      "district": 9,
+      "count": 218
+    },
+    {
+      "hour": 15,
+      "district": 6,
+      "count": 217
+    },
+    {
+      "hour": 13,
+      "district": 10,
+      "count": 217
+    },
+    {
+      "hour": 23,
+      "district": 20,
+      "count": 217
+    },
+    {
+      "hour": 9,
+      "district": 2,
+      "count": 216
+    },
+    {
+      "hour": 3,
+      "district": 20,
+      "count": 216
+    },
+    {
+      "hour": 0,
+      "district": 10,
+      "count": 216
+    },
+    {
+      "hour": 17,
+      "district": 12,
+      "count": 216
+    },
+    {
+      "hour": 17,
+      "district": 14,
+      "count": 215
+    },
+    {
+      "hour": 11,
+      "district": 14,
+      "count": 215
+    },
+    {
+      "hour": 15,
+      "district": 20,
+      "count": 214
+    },
+    {
+      "hour": 20,
+      "district": 16,
+      "count": 214
+    },
+    {
+      "hour": 22,
+      "district": 25,
+      "count": 214
+    },
+    {
+      "hour": 13,
+      "district": 20,
+      "count": 214
+    },
+    {
+      "hour": 2,
+      "district": 19,
+      "count": 213
+    },
+    {
+      "hour": 15,
+      "district": 4,
+      "count": 213
+    },
+    {
+      "hour": 5,
+      "district": 8,
+      "count": 213
+    },
+    {
+      "hour": 9,
+      "district": 9,
+      "count": 213
+    },
+    {
+      "hour": 22,
+      "district": 16,
+      "count": 213
+    },
+    {
+      "hour": 10,
+      "district": 7,
+      "count": 212
+    },
+    {
+      "hour": 5,
+      "district": 22,
+      "count": 212
+    },
+    {
+      "hour": 5,
+      "district": 1,
+      "count": 212
+    },
+    {
+      "hour": 15,
+      "district": 10,
+      "count": 212
+    },
+    {
+      "hour": 7,
+      "district": 16,
+      "count": 212
+    },
+    {
+      "hour": 21,
+      "district": 3,
+      "count": 211
+    },
+    {
+      "hour": 12,
+      "district": 9,
+      "count": 211
+    },
+    {
+      "hour": 11,
+      "district": 5,
+      "count": 211
+    },
+    {
+      "hour": 13,
+      "district": 12,
+      "count": 210
+    },
+    {
+      "hour": 11,
+      "district": 17,
+      "count": 210
+    },
+    {
+      "hour": 6,
+      "district": 19,
+      "count": 210
+    },
+    {
+      "hour": 6,
+      "district": 18,
+      "count": 210
+    },
+    {
+      "hour": 7,
+      "district": 9,
+      "count": 210
+    },
+    {
+      "hour": 1,
+      "district": 15,
+      "count": 210
+    },
+    {
+      "hour": 22,
+      "district": 9,
+      "count": 209
+    },
+    {
+      "hour": 7,
+      "district": 19,
+      "count": 209
+    },
+    {
+      "hour": 7,
+      "district": 6,
+      "count": 209
+    },
+    {
+      "hour": 8,
+      "district": 19,
+      "count": 209
+    },
+    {
+      "hour": 17,
+      "district": 24,
+      "count": 209
+    },
+    {
+      "hour": 16,
+      "district": 20,
+      "count": 209
+    },
+    {
+      "hour": 19,
+      "district": 24,
+      "count": 209
+    },
+    {
+      "hour": 7,
+      "district": 15,
+      "count": 209
+    },
+    {
+      "hour": 1,
+      "district": 25,
+      "count": 208
+    },
+    {
+      "hour": 11,
+      "district": 8,
+      "count": 208
+    },
+    {
+      "hour": 6,
+      "district": 2,
+      "count": 208
+    },
+    {
+      "hour": 2,
+      "district": 8,
+      "count": 208
+    },
+    {
+      "hour": 23,
+      "district": 4,
+      "count": 207
+    },
+    {
+      "hour": 10,
+      "district": 8,
+      "count": 207
+    },
+    {
+      "hour": 22,
+      "district": 17,
+      "count": 207
+    },
+    {
+      "hour": 9,
+      "district": 1,
+      "count": 207
+    },
+    {
+      "hour": 23,
+      "district": 12,
+      "count": 207
+    },
+    {
+      "hour": 21,
+      "district": 10,
+      "count": 207
+    },
+    {
+      "hour": 5,
+      "district": 17,
+      "count": 207
+    },
+    {
+      "hour": 17,
+      "district": 1,
+      "count": 207
+    },
+    {
+      "hour": 16,
+      "district": 4,
+      "count": 207
+    },
+    {
+      "hour": 7,
+      "district": 20,
+      "count": 206
+    },
+    {
+      "hour": 2,
+      "district": 22,
+      "count": 206
+    },
+    {
+      "hour": 14,
+      "district": 4,
+      "count": 206
+    },
+    {
+      "hour": 0,
+      "district": 16,
+      "count": 206
+    },
+    {
+      "hour": 20,
+      "district": 25,
+      "count": 206
+    },
+    {
+      "hour": 0,
+      "district": 1,
+      "count": 206
+    },
+    {
+      "hour": 0,
+      "district": 24,
+      "count": 206
+    },
+    {
+      "hour": 15,
+      "district": 8,
+      "count": 205
+    },
+    {
+      "hour": 13,
+      "district": 9,
+      "count": 205
+    },
+    {
+      "hour": 23,
+      "district": 8,
+      "count": 205
+    },
+    {
+      "hour": 12,
+      "district": 24,
+      "count": 205
+    },
+    {
+      "hour": 23,
+      "district": 9,
+      "count": 205
+    },
+    {
+      "hour": 7,
+      "district": 14,
+      "count": 205
+    },
+    {
+      "hour": 6,
+      "district": 10,
+      "count": 205
+    },
+    {
+      "hour": 2,
+      "district": 17,
+      "count": 204
+    },
+    {
+      "hour": 21,
+      "district": 6,
+      "count": 204
+    },
+    {
+      "hour": 20,
+      "district": 3,
+      "count": 204
+    },
+    {
+      "hour": 6,
+      "district": 4,
+      "count": 204
+    },
+    {
+      "hour": 19,
+      "district": 8,
+      "count": 203
+    },
+    {
+      "hour": 5,
+      "district": 25,
+      "count": 203
+    },
+    {
+      "hour": 0,
+      "district": 20,
+      "count": 203
+    },
+    {
+      "hour": 19,
+      "district": 19,
+      "count": 203
+    },
+    {
+      "hour": 18,
+      "district": 5,
+      "count": 203
+    },
+    {
+      "hour": 20,
+      "district": 14,
+      "count": 203
+    },
+    {
+      "hour": 20,
+      "district": 2,
+      "count": 203
+    },
+    {
+      "hour": 2,
+      "district": 14,
+      "count": 203
+    },
+    {
+      "hour": 14,
+      "district": 11,
+      "count": 202
+    },
+    {
+      "hour": 6,
+      "district": 7,
+      "count": 202
+    },
+    {
+      "hour": 22,
+      "district": 12,
+      "count": 202
+    },
+    {
+      "hour": 23,
+      "district": 18,
+      "count": 202
+    },
+    {
+      "hour": 18,
+      "district": 25,
+      "count": 202
+    },
+    {
+      "hour": 11,
+      "district": 24,
+      "count": 202
+    },
+    {
+      "hour": 18,
+      "district": 18,
+      "count": 202
+    },
+    {
+      "hour": 16,
+      "district": 7,
+      "count": 202
+    },
+    {
+      "hour": 9,
+      "district": 19,
+      "count": 202
+    },
+    {
+      "hour": 19,
+      "district": 6,
+      "count": 201
+    },
+    {
+      "hour": 0,
+      "district": 11,
+      "count": 201
+    },
+    {
+      "hour": 2,
+      "district": 11,
+      "count": 201
+    },
+    {
+      "hour": 1,
+      "district": 17,
+      "count": 201
+    },
+    {
+      "hour": 17,
+      "district": 20,
+      "count": 201
+    },
+    {
+      "hour": 6,
+      "district": 25,
+      "count": 201
+    },
+    {
+      "hour": 12,
+      "district": 8,
+      "count": 201
+    },
+    {
+      "hour": 12,
+      "district": 2,
+      "count": 201
+    },
+    {
+      "hour": 17,
+      "district": 25,
+      "count": 201
+    },
+    {
+      "hour": 19,
+      "district": 11,
+      "count": 201
+    },
+    {
+      "hour": 14,
+      "district": 6,
+      "count": 200
+    },
+    {
+      "hour": 8,
+      "district": 8,
+      "count": 200
+    },
+    {
+      "hour": 14,
+      "district": 22,
+      "count": 200
+    },
+    {
+      "hour": 22,
+      "district": 11,
+      "count": 200
+    },
+    {
+      "hour": 7,
+      "district": 22,
+      "count": 200
+    },
+    {
+      "hour": 1,
+      "district": 8,
+      "count": 200
+    },
+    {
+      "hour": 9,
+      "district": 17,
+      "count": 200
+    },
+    {
+      "hour": 11,
+      "district": 2,
+      "count": 200
+    },
+    {
+      "hour": 19,
+      "district": 20,
+      "count": 200
+    },
+    {
+      "hour": 16,
+      "district": 12,
+      "count": 200
+    },
+    {
+      "hour": 21,
+      "district": 7,
+      "count": 199
+    },
+    {
+      "hour": 15,
+      "district": 24,
+      "count": 199
+    },
+    {
+      "hour": 0,
+      "district": 15,
+      "count": 199
+    },
+    {
+      "hour": 10,
+      "district": 12,
+      "count": 199
+    },
+    {
+      "hour": 7,
+      "district": 12,
+      "count": 199
+    },
+    {
+      "hour": 17,
+      "district": 6,
+      "count": 199
+    },
+    {
+      "hour": 16,
+      "district": 22,
+      "count": 199
+    },
+    {
+      "hour": 18,
+      "district": 20,
+      "count": 199
+    },
+    {
+      "hour": 16,
+      "district": 18,
+      "count": 199
+    },
+    {
+      "hour": 11,
+      "district": 20,
+      "count": 199
+    },
+    {
+      "hour": 10,
+      "district": 10,
+      "count": 199
+    },
+    {
+      "hour": 9,
+      "district": 4,
+      "count": 199
+    },
+    {
+      "hour": 7,
+      "district": 8,
+      "count": 199
+    },
+    {
+      "hour": 15,
+      "district": 22,
+      "count": 199
+    },
+    {
+      "hour": 21,
+      "district": 4,
+      "count": 199
+    },
+    {
+      "hour": 6,
+      "district": 17,
+      "count": 198
+    },
+    {
+      "hour": 6,
+      "district": 22,
+      "count": 198
+    },
+    {
+      "hour": 0,
+      "district": 3,
+      "count": 198
+    },
+    {
+      "hour": 5,
+      "district": 4,
+      "count": 198
+    },
+    {
+      "hour": 4,
+      "district": 22,
+      "count": 198
+    },
+    {
+      "hour": 13,
+      "district": 6,
+      "count": 198
+    },
+    {
+      "hour": 9,
+      "district": 25,
+      "count": 198
+    },
+    {
+      "hour": 13,
+      "district": 1,
+      "count": 198
+    },
+    {
+      "hour": 18,
+      "district": 6,
+      "count": 198
+    },
+    {
+      "hour": 10,
+      "district": 22,
+      "count": 198
+    },
+    {
+      "hour": 20,
+      "district": 7,
+      "count": 198
+    },
+    {
+      "hour": 21,
+      "district": 16,
+      "count": 197
+    },
+    {
+      "hour": 2,
+      "district": 5,
+      "count": 197
+    },
+    {
+      "hour": 22,
+      "district": 8,
+      "count": 197
+    },
+    {
+      "hour": 7,
+      "district": 25,
+      "count": 197
+    },
+    {
+      "hour": 21,
+      "district": 22,
+      "count": 197
+    },
+    {
+      "hour": 1,
+      "district": 3,
+      "count": 197
+    },
+    {
+      "hour": 1,
+      "district": 24,
+      "count": 197
+    },
+    {
+      "hour": 14,
+      "district": 24,
+      "count": 197
+    },
+    {
+      "hour": 10,
+      "district": 19,
+      "count": 197
+    },
+    {
+      "hour": 14,
+      "district": 8,
+      "count": 197
+    },
+    {
+      "hour": 21,
+      "district": 1,
+      "count": 197
+    },
+    {
+      "hour": 0,
+      "district": 7,
+      "count": 197
+    },
+    {
+      "hour": 2,
+      "district": 20,
+      "count": 197
+    },
+    {
+      "hour": 21,
+      "district": 25,
+      "count": 197
+    },
+    {
+      "hour": 4,
+      "district": 5,
+      "count": 197
+    },
+    {
+      "hour": 11,
+      "district": 18,
+      "count": 197
+    },
+    {
+      "hour": 5,
+      "district": 15,
+      "count": 197
+    },
+    {
+      "hour": 17,
+      "district": 16,
+      "count": 197
+    },
+    {
+      "hour": 10,
+      "district": 24,
+      "count": 196
+    },
+    {
+      "hour": 7,
+      "district": 5,
+      "count": 196
+    },
+    {
+      "hour": 3,
+      "district": 5,
+      "count": 196
+    },
+    {
+      "hour": 20,
+      "district": 19,
+      "count": 196
+    },
+    {
+      "hour": 14,
+      "district": 15,
+      "count": 196
+    },
+    {
+      "hour": 18,
+      "district": 17,
+      "count": 196
+    },
+    {
+      "hour": 17,
+      "district": 15,
+      "count": 196
+    },
+    {
+      "hour": 10,
+      "district": 17,
+      "count": 196
+    },
+    {
+      "hour": 13,
+      "district": 22,
+      "count": 196
+    },
+    {
+      "hour": 17,
+      "district": 22,
+      "count": 196
+    },
+    {
+      "hour": 21,
+      "district": 5,
+      "count": 196
+    },
+    {
+      "hour": 16,
+      "district": 19,
+      "count": 196
+    },
+    {
+      "hour": 11,
+      "district": 10,
+      "count": 195
+    },
+    {
+      "hour": 20,
+      "district": 11,
+      "count": 195
+    },
+    {
+      "hour": 23,
+      "district": 2,
+      "count": 195
+    },
+    {
+      "hour": 3,
+      "district": 22,
+      "count": 195
+    },
+    {
+      "hour": 21,
+      "district": 2,
+      "count": 195
+    },
+    {
+      "hour": 3,
+      "district": 3,
+      "count": 195
+    },
+    {
+      "hour": 13,
+      "district": 25,
+      "count": 195
+    },
+    {
+      "hour": 6,
+      "district": 9,
+      "count": 195
+    },
+    {
+      "hour": 6,
+      "district": 8,
+      "count": 195
+    },
+    {
+      "hour": 3,
+      "district": 7,
+      "count": 195
+    },
+    {
+      "hour": 20,
+      "district": 12,
+      "count": 195
+    },
+    {
+      "hour": 15,
+      "district": 5,
+      "count": 195
+    },
+    {
+      "hour": 1,
+      "district": 6,
+      "count": 195
+    },
+    {
+      "hour": 16,
+      "district": 24,
+      "count": 195
+    },
+    {
+      "hour": 16,
+      "district": 9,
+      "count": 194
+    },
+    {
+      "hour": 6,
+      "district": 15,
+      "count": 194
+    },
+    {
+      "hour": 15,
+      "district": 12,
+      "count": 194
+    },
+    {
+      "hour": 19,
+      "district": 9,
+      "count": 194
+    },
+    {
+      "hour": 23,
+      "district": 10,
+      "count": 194
+    },
+    {
+      "hour": 8,
+      "district": 18,
+      "count": 194
+    },
+    {
+      "hour": 18,
+      "district": 3,
+      "count": 194
+    },
+    {
+      "hour": 23,
+      "district": 17,
+      "count": 194
+    },
+    {
+      "hour": 19,
+      "district": 12,
+      "count": 194
+    },
+    {
+      "hour": 15,
+      "district": 25,
+      "count": 194
+    }
+  ]
+}
